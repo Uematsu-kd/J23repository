@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="style.css">
         <title>役パズル</title>
     </head>
+    <h1>役パズル</h1>
     <body>
         <!--牌のボタン-->
         <!--ここからマンズ-->
@@ -153,10 +154,17 @@
         </button>
 
         <br>
+        <h2>手牌</h2>
+        <div id="imageContainer"></div>
 
-
-        <script>
-    
+        <script type="text/javascript">
+            document.getElementById('imageButton1').addEventListener('click', function(){
+                var imageElement = document.createElement('img');
+                imageElement.src = 'images/pai-images/man1.png';
+                var container = document.getElementById('imageContainer');
+                container.innerHTML = '';
+                container.appendChild(imageElement);
+            });
         </script>
     </body>
 </html>
