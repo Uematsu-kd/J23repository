@@ -1,0 +1,1 @@
+点棒・牌の画像:https://majandofu.com/mahjong-images
