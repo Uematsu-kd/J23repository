@@ -161,16 +161,7 @@
     <div id="imageContainer"></div>
 
     <script type="text/javascript">
-        //麻雀牌クラス
-        class Hai {
-            constructor(kind, value) {
-                this.kind = kind;       //麻雀牌の種類（萬子・筒子・索子・四風牌・三元牌）
-                this.value = value;     //麻雀牌の値（1~9 東南西北白発中）
-                this.pic = this.kind + '_' + String(this.value) + '.png'; //画像ファイル名
-            }
-        }
-
-
+        
         document.getElementById('imageButton1').addEventListener('click', function () {
             var imageElement = document.createElement('img');
             imageElement.src = 'images/pai-images/man1.png';
