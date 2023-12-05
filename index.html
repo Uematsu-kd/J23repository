@@ -161,14 +161,63 @@
     <div id="imageContainer"></div>
 
     <script type="text/javascript">
-        
+        // 麻雀牌クラス
+        class Hai {
+            constructor(kind, value) {
+                this.kind = kind;
+                this.value = value;
+                this.pic = 'images/pai-images/' + this.kind + this.value + '.png';
+            }
+        }
+
+        // 選択された牌の配列
+        let selectedTiles = [];
+
+        // 牌の数をチェックする関数
+        function checkTileCount(imageSrc) {
+            return selectedTiles.filter(src => src === imageSrc).length;
+        }
+
+        // 手牌エリアに牌を追加する関数
+        function addTileToHand(imageSrc) {
+            if (selectedTiles.length < 14 && checkTileCount(imageSrc) < 4) {
+                selectedTiles.push(imageSrc);
+                renderHand();
+            }
+        }
+
+        // 手牌エリアを描画する関数
+        function renderHand() {
+            const handContainer = document.getElementById('imageContainer');
+            handContainer.innerHTML = ''; // 手牌エリアをクリア
+            selectedTiles.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.addEventListener('click', () => removeTileFromHand(index));
+                handContainer.appendChild(img);
+            });
+        }
+
+        // 手牌から牌を削除する関数
+        function removeTileFromHand(index) {
+            selectedTiles.splice(index, 1);
+            renderHand();
+        }
+
+        // 各牌ボタンにイベントリスナーを追加
+        document.querySelectorAll('button[id^="imageButton"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const imageSrc = button.querySelector('img').src;
+                addTileToHand(imageSrc);
+            });
+        });
 
         //手牌をソートする昇順に
         const hands = hand.sort((a, b) => a - b);
 
         //-----------------国士無双を判定する関数-----------------------
-        function isKokusi(hands){
-           // 国士無双の13種の牌
+        function isKokusi(hands) {
+            // 国士無双の13種の牌
             const kokushiTiles = [1, 9, 11, 19, 21, 29, 31, 32, 33, 34, 35, 36, 37];
 
             // 手牌を数えるためのオブジェクト
@@ -176,52 +225,52 @@
 
             // 手牌を数える
             hand.forEach(tile => {
-            tileCount[tile] = (tileCount[tile] || 0) + 1;
+                tileCount[tile] = (tileCount[tile] || 0) + 1;
             });
 
             // 国士無双の条件を満たすかどうかを判定
             let Kokushi = true;
             kokushiTiles.forEach(tile => {
-            if (!tileCount[tile]) {
-                Kokushi = false;
-            }
-        });
+                if (!tileCount[tile]) {
+                    Kokushi = false;
+                }
+            });
 
-        return Kokushi;
+            return Kokushi;
         }
 
         //------------------大三元を判定する関数--------------------------
         function isDaisharin(hands) {
-        // 大三元を構成する牌の種類
-        const daisharinTiles = [35,36,37];
-        
-        // 手牌に大三元の牌が3枚以上含まれているか判定
-        for (const tile of daisharinTiles) {
-            const count = hands.filter(t => t === tile).length;
-            if (count < 3) {
-                return false;
-            }
-        }
+            // 大三元を構成する牌の種類
+            const daisharinTiles = [35, 36, 37];
 
-        // 大三元が揃っている場合はtrueを返す
-        return true;
+            // 手牌に大三元の牌が3枚以上含まれているか判定
+            for (const tile of daisharinTiles) {
+                const count = hands.filter(t => t === tile).length;
+                if (count < 3) {
+                    return false;
+                }
+            }
+
+            // 大三元が揃っている場合はtrueを返す
+            return true;
         }
 
 
         //------------------字一色を判定する関数--------------------------
         function isJiisou(hands) {
-        // 字一色を構成する牌の種類
-        const jiisouTiles = [31, 32, 33, 34, 35, 36, 37];
+            // 字一色を構成する牌の種類
+            const jiisouTiles = [31, 32, 33, 34, 35, 36, 37];
 
-        // 手牌に字一色の牌が含まれているか判定
-        for (const tile of jiisouTiles) {
-            if (!hands.includes(tile)) {
-                return false;
+            // 手牌に字一色の牌が含まれているか判定
+            for (const tile of jiisouTiles) {
+                if (!hands.includes(tile)) {
+                    return false;
+                }
             }
-        }
 
-        // 字一色が揃っている場合はtrueを返す
-        return true;
+            // 字一色が揃っている場合はtrueを返す
+            return true;
         }
 
 
