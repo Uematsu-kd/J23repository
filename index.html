@@ -160,6 +160,10 @@
     <h2>手牌</h2>
     <div id="imageContainer"></div>
 
+    <!-- 手牌をリセットするボタンを追加 -->
+    <button id="resetButton">リセット</button>
+
+
     <script type="text/javascript">
         // 麻雀牌クラス
         class Hai {
@@ -197,7 +201,6 @@
                 handContainer.appendChild(img);
             });
         }
-
         // 手牌から牌を削除する関数
         function removeTileFromHand(index) {
             selectedTiles.splice(index, 1);
@@ -210,6 +213,11 @@
                 const imageSrc = button.querySelector('img').src;
                 addTileToHand(imageSrc);
             });
+        });
+        // 手牌をリセットする関数
+        document.getElementById('resetButton').addEventListener('click', () => {
+            selectedTiles = []; // 選択された牌の配列をクリア
+            renderHand(); // 手牌エリアを再描画
         });
 
         //手牌をソートする昇順に
