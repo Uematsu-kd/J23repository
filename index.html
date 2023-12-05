@@ -162,13 +162,101 @@
 
     <script type="text/javascript">
         
-        document.getElementById('imageButton1').addEventListener('click', function () {
-            var imageElement = document.createElement('img');
-            imageElement.src = 'images/pai-images/man1.png';
-            var container = document.getElementById('imageContainer');
-            container.innerHTML = '';
-            container.appendChild(imageElement);
+
+        //手牌をソートする昇順に
+        const hands = hand.sort((a, b) => a - b);
+
+        //-----------------国士無双を判定する関数-----------------------
+        function isKokusi(hands){
+           // 国士無双の13種の牌
+            const kokushiTiles = [1, 9, 11, 19, 21, 29, 31, 32, 33, 34, 35, 36, 37];
+
+            // 手牌を数えるためのオブジェクト
+            const tileCount = {};
+
+            // 手牌を数える
+            hand.forEach(tile => {
+            tileCount[tile] = (tileCount[tile] || 0) + 1;
+            });
+
+            // 国士無双の条件を満たすかどうかを判定
+            let Kokushi = true;
+            kokushiTiles.forEach(tile => {
+            if (!tileCount[tile]) {
+                Kokushi = false;
+            }
         });
+
+        return Kokushi;
+        }
+
+        //------------------大三元を判定する関数--------------------------
+        function isDaisharin(hands) {
+        // 大三元を構成する牌の種類
+        const daisharinTiles = [35,36,37];
+        
+        // 手牌に大三元の牌が3枚以上含まれているか判定
+        for (const tile of daisharinTiles) {
+            const count = hands.filter(t => t === tile).length;
+            if (count < 3) {
+                return false;
+            }
+        }
+
+        // 大三元が揃っている場合はtrueを返す
+        return true;
+        }
+
+
+        //------------------字一色を判定する関数--------------------------
+        function isJiisou(hands) {
+        // 字一色を構成する牌の種類
+        const jiisouTiles = [31, 32, 33, 34, 35, 36, 37];
+
+        // 手牌に字一色の牌が含まれているか判定
+        for (const tile of jiisouTiles) {
+            if (!hands.includes(tile)) {
+                return false;
+            }
+        }
+
+        // 字一色が揃っている場合はtrueを返す
+        return true;
+        }
+
+
+        //------------------対々和を判定する関数--------------------------
+        function isToitoi(hands) {
+            // 手牌を数えるためのオブジェクト
+            const tileCount = {};
+
+            // 手牌の各牌の出現回数を数える
+            for (const tile of hands) {
+                tileCount[tile] = (tileCount[tile] || 0) + 1;
+            }
+
+            // 同じ牌が4つ以上あれば対々和と判定
+            for (const count of Object.values(tileCount)) {
+                if (count >= 4) {
+                    return true;
+                }
+            }
+
+            // 対々和でない場合はfalseを返す
+            return false;
+        }
+
+
+        //------------------一盃口を判定する関数--------------------------
+        function isIipeikou(hands) {
+            // 手牌を文字列に変換
+            const handString = hands.join('');
+
+            // 正規表現を使用して一盃口を検索
+            const iipeikouRegex = /(11|22|33|44|55|66|77|88|99)([^0]|$)/;
+            return iipeikouRegex.test(handString);
+        }
+
     </script>
 </body>
 
