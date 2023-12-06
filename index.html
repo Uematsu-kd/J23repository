@@ -256,43 +256,8 @@
         }
 
 
-        //------------------字一色を判定する関数--------------------------
-        function isJiisou(hands) {
-            // 字一色を構成する牌の種類
-            const jiisouTiles = [31, 32, 33, 34, 35, 36, 37];
-
-            // 手牌に字一色の牌が含まれているか判定
-            for (const tile of jiisouTiles) {
-                if (!hands.includes(tile)) {
-                    return false;
-                }
-            }
-
-            // 字一色が揃っている場合はtrueを返す
-            return true;
-        }
 
 
-        //------------------対々和を判定する関数--------------------------
-        function isToitoi(hands) {
-            // 手牌を数えるためのオブジェクト
-            const tileCount = {};
-
-            // 手牌の各牌の出現回数を数える
-            for (const tile of hands) {
-                tileCount[tile] = (tileCount[tile] || 0) + 1;
-            }
-
-            // 同じ牌が4つ以上あれば対々和と判定
-            for (const count of Object.values(tileCount)) {
-                if (count >= 4) {
-                    return true;
-                }
-            }
-
-            // 対々和でない場合はfalseを返す
-            return false;
-        }
 
 
         //------------------一盃口を判定する関数--------------------------
