@@ -161,7 +161,11 @@
     <div id="imageContainer"></div>
 
     <!-- 手牌をリセットするボタンを追加 -->
-    <button id="resetButton">リセット</button>
+    <p><button id="resetButton">リセット</button></p>
+
+    <!--   役を判定するボタンを追加     -->
+    <p><button id="judgeButton">役判定</button></p>
+
 
 
     <script type="text/javascript">
@@ -204,6 +208,8 @@
             button.addEventListener('click', () => {
                 const imageSrc = button.querySelector('img').src;
                 addTileToHand(imageSrc);
+                const buttonValue = parseInt(button.value);
+                addTileNumberToHand(buttonValue);
             });
         });
         // 手牌をリセットする関数
@@ -212,8 +218,24 @@
             renderHand(); // 手牌エリアを再描画
         });
 
-        //手牌をソートする昇順に
-        const hands = hand.sort((a, b) => a - b);
+        // 牌を手牌に追加する関数
+        function addTileNumberToHand(tileNumber) {
+            if (hand.length < 14) {
+                hand.push(tileNumber);
+                renderHand();
+            }
+        }
+        document.getElementById('judgeButton').addEventListener('click', () => {
+            //手牌をソートする昇順に
+            const hands = hand.sort((a, b) => a - b);
+            
+            if(isKokusi(hands)){
+                alert('国士無双です。')
+            }
+            if(isDaisharin(hands)){
+                alert('大三元です。')
+            }
+        });
 
         //-----------------国士無双を判定する関数-----------------------
         function isKokusi(hands) {
