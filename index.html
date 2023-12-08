@@ -201,6 +201,7 @@
         function removeTileFromHand(index) {
             selectedTiles.splice(index, 1);
             renderHand();
+            hand.splice(index, 1);
         }
 
         // 各牌ボタンにイベントリスナーを追加
@@ -216,6 +217,7 @@
         document.getElementById('resetButton').addEventListener('click', () => {
             selectedTiles = []; // 選択された牌の配列をクリア
             renderHand(); // 手牌エリアを再描画
+            hand = []; 
         });
 
         // 牌を手牌に追加する関数
@@ -225,6 +227,8 @@
                 renderHand();
             }
         }
+
+        //役判定ボタンがクリックされた時の処理
         document.getElementById('judgeButton').addEventListener('click', () => {
             //手牌をソートする昇順に
             const hands = hand.sort((a, b) => a - b);
