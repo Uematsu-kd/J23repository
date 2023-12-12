@@ -217,7 +217,7 @@
         document.getElementById('resetButton').addEventListener('click', () => {
             selectedTiles = []; // 選択された牌の配列をクリア
             renderHand(); // 手牌エリアを再描画
-            hand = []; 
+            hand = [];
         });
 
         // 牌を手牌に追加する関数
@@ -232,13 +232,13 @@
         document.getElementById('judgeButton').addEventListener('click', () => {
             //手牌をソートする昇順に
             const hands = hand.sort((a, b) => a - b);
-            
-            if(isKokusi(hands)){
+
+            if (isKokusi(hands)) {
                 alert('国士無双です。')
-            }else if(countTiles(hands) > 13){
+            } else if (countTiles(hands) > 13) {
                 alert('役が付きません')
             }
-            if(isDaisharin(hands)){
+            if (isDaisharin(hands)) {
                 alert('大三元です。')
             }
             if(isIipeikou(hands)){
@@ -347,9 +347,9 @@
             const invalidTileCount = hands.filter(tile => invalidTiles.includes(tile)).length;
 
             // 手牌に1や9を含まず、字牌も含まない場合、タンヤオと判定
-            if(invalidTileCount === 0){
+            if (invalidTileCount === 0) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         }
