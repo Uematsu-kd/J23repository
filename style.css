@@ -57,8 +57,9 @@ div {
 
 #list{
     font-size: 18pt;
-    color: white;
+    color: rgb(51, 50, 50);
     list-style:none;
+    overflow: hidden;
 }
 
 .pai{
@@ -66,6 +67,38 @@ div {
     width: auto;
 }
 
+.pai:hover{
+    background-color: #f5d681;
+    color: #777;
+}
+
 .a{
     font-size: 12pt;
+}
+
+/* 右からスライドするアニメーションの定義 */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* 各リストアイテムにアニメーションを適用する */
+#list li {
+    animation: slideIn 1s ease-in-out;
+}
+
+/* 見栄えのための追加のスタイル（任意） */
+#list {
+    list-style: none;
+    padding: 0;
+}
+
+#list li {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 5px;
 }
