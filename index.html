@@ -249,11 +249,13 @@
             if (isDaisharin(hands)) {
                 YakuScore.push('大三元')
             }
-            if (isIipeikou(hands)) {
-                YakuScore.push('一盃口')
-            }
             if (isToitoi(hands)) {
                 YakuScore.push('対々和')
+            }else if(isChiitoitsu(hands)) {
+                YakuScore.push('七对子')
+            }
+            else if(isIipeikou(hands)) {
+                YakuScore.push('一盃口')
             }
             if (isTanyao(hands)) {
                 YakuScore.push('タンヤオ')
@@ -278,9 +280,6 @@
             }
             if(isPinfu(hands)){
                 YakuScore.push('平和')
-            }
-            if (isChiitoitsu(hands)) {
-                YakuScore.push('七对子')
             }
             
             for (var i = 0; i < YakuScore.length; i++) { 
@@ -392,8 +391,8 @@
             // 手牌を数えるためのオブジェクト
             let tileCount = countTiles(hands);
 
-            // 同じ牌が4つ以下であれば対々和と判定
-            if (tileCount <= 4) {
+            // 同じ牌が5つ以下であれば対々和と判定
+            if (tileCount <= 5) {
                 return true;
             }
 
@@ -546,6 +545,7 @@
             const uniqueSortedTiles = [...new Set(hands)].sort();
 
             let countShuntsu = 0;
+            let countKotsu = 0;
 
             for (let i = 0; i < uniqueSortedTiles.length - 2; i++) {
                 const current = uniqueSortedTiles[i];
@@ -557,13 +557,25 @@
                 }
             }
 
+            for (let i = 0; i < uniqueSortedTiles.length - 2; i++) {
+                const current = uniqueSortedTiles[i];
+                const next1 = current;
+                const next2 = current;
+
+                if (uniqueSortedTiles.includes(next1) && uniqueSortedTiles.includes(next2)) {
+                    countKotsu++;
+                }
+            }
+
             // 手牌に35, 36, 37(三元牌)がある場合はfalse
             if (hands.includes(35) || hands.includes(36) || hands.includes(37)) {
                 return false;
             }
-
-            return countShuntsu >= 4;
+            
+            return countShuntsu >= 4 && countKotsu === 0;
         }
+
+
 
         //------------------七対子--------------------------
         function isChiitoitsu(hands) {
