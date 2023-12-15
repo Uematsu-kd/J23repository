@@ -19,6 +19,8 @@
           <li class="nav-list-item"><a href="yakuitiran.html">役一覧</a></li>
         </ul>
       </header>
+
+    <p><h2>対々和(トイトイ)と役牌(白發中)と三色同刻(サンショクドーコー)を作ってみよう！</h2></p>
     <!--牌のボタン-->
     <!--ここからマンズ-->
     <button id="imageButton1" value="1" class="pai">
@@ -178,7 +180,7 @@
     <br><span><button id="resetButton">リセット</button></span>
 
     <!--   役を判定するボタンを追加     -->
-    <span><button id="judgeButton">役判定</button></span><br>
+    <span><button id="judgeButton">判定</button></span><br>
 
     <ul id="list"></ul>
 
@@ -251,46 +253,26 @@
             const hands = hand.sort((a, b) => a - b);
             var YakuScore = [];
 
-            if (isKokusi(hands)) {
-                YakuScore.push('国士無双')
-            } else if (countTiles(hands) > 13) {
-                YakuScore.push('役が付きません')
+            
+            if (countTiles(hands) > 13) {
+                YakuScore.push('残念。不正解！リセットでやり直せます。')
             }
-            if (isDaisharin(hands)) {
-                YakuScore.push('大三元')
+            if((isToitoi(hands)) && (isYaku(hands)) && (isSansyokudo(hands))){
+                YakuScore.push('正解！ヘッダーの初心者で次の問題に挑戦しよう！')
+            }else if((isToitoi(hands)) || (isYaku(hands)) || (isSansyokudo(hands))){
+                if((isToitoi(hands)) && (isYaku(hands))){
+                    YakuScore.push('惜しい！対々和と役牌(白發中)はできています！リセットでやり直せます。')
+                }else if((isToitoi(hands)) && (isSansyokudo(hands))){
+                    YakuScore.push('惜しい！対々和と三色同刻はできています！リセットでやり直せます。')
+                }else if(isYaku(hands)){
+                    YakuScore.push('惜しい！役牌(白發中)のみできています！リセットでやり直せます。')
+                }else if(isToitoi(hands)){
+                    YakuScore.push('惜しい！対々和のみできています！リセットでやり直せます。')
+                }
+            }else{
+                YakuScore.push('残念。不正解！リセットでやり直せます。')
             }
-            if (isToitoi(hands)) {
-                YakuScore.push('対々和')
-            }else if(isChiitoitsu(hands)) {
-                YakuScore.push('七对子')
-            }
-            else if(isIipeikou(hands)) {
-                YakuScore.push('一盃口')
-            }
-            if (isTanyao(hands)) {
-                YakuScore.push('タンヤオ')
-            }
-            if (isYaku(hands)) {
-                YakuScore.push('役牌(三元牌)/白發中')
-            }
-            if (isIkkitukan(hands)) {
-                YakuScore.push('一気通貫')
-            }
-            if (isSansyokudo(hands)) {
-               YakuScore.push('三色同刻')
-            }
-            if (isSansyokujun(hands)) {
-                YakuScore.push('三色同順')
-            }
-            if (isQingYiSe(hands)) {
-                YakuScore.push('清一色')
-            }
-            if(isHonitsu(hands)){
-                YakuScore.push('混一色')
-            }
-            if(isPinfu(hands)){
-                YakuScore.push('平和')
-            }
+            
             
             for (var i = 0; i < YakuScore.length; i++) { 
                 var Yakuview = document.createElement('li'); 
@@ -581,7 +563,7 @@
             if (hands.includes(35) || hands.includes(36) || hands.includes(37)) {
                 return false;
             }
-
+    
             return countShuntsu >= 4 && countKotsu === 0;
         }
 
