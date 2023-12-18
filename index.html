@@ -259,21 +259,26 @@
             const hands = hand.sort((a, b) => a - b);
             var YakuScore = [];
 
+            if(hands.length < 14){
+                alert('牌を14枚選択してください。');
+                return;
+            }
+
             if (isKokusi(hands)) {
-                YakuScore.push('国士無双')
+                YakuScore.push('国士無双(コクシムソウ)')
             } else if (countTiles(hands) > 13) {
                 YakuScore.push('役が付きません')
             }
             if (isDaisharin(hands)) {
-                YakuScore.push('大三元')
-            }
+                YakuScore.push('大三元(ダイサンゲン)')
+            }else{
             if (isToitoi(hands)) {
-                YakuScore.push('対々和')
+                YakuScore.push('対々和(トイトイ)')
             }else if(isChiitoitsu(hands)) {
-                YakuScore.push('七对子')
+                YakuScore.push('七对子(チートイツ)')
             }
             else if(isIipeikou(hands)) {
-                YakuScore.push('一盃口')
+                YakuScore.push('一盃口(イーペーコー)')
             }
             if (isTanyao(hands)) {
                 YakuScore.push('タンヤオ')
@@ -282,22 +287,23 @@
                 YakuScore.push('役牌(三元牌)/白發中')
             }
             if (isIkkitukan(hands)) {
-                YakuScore.push('一気通貫')
+                YakuScore.push('一気通貫(イッキツウカン)')
             }
             if (isSansyokudo(hands)) {
-               YakuScore.push('三色同刻')
+               YakuScore.push('三色同刻(サンショクドーコー)')
             }
             if (isSansyokujun(hands)) {
-                YakuScore.push('三色同順')
+                YakuScore.push('三色同順(サンショクドージュン)')
             }
             if (isQingYiSe(hands)) {
-                YakuScore.push('清一色')
+                YakuScore.push('清一色(チンイツ)')
             }
             if(isHonitsu(hands)){
-                YakuScore.push('混一色')
+                YakuScore.push('混一色(ホンイツ)')
             }
             if(isPinfu(hands)){
-                YakuScore.push('平和')
+                YakuScore.push('平和(ピンフ)')
+            }
             }
             
             for (var i = 0; i < YakuScore.length; i++) { 

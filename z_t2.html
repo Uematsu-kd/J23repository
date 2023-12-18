@@ -167,7 +167,7 @@
     <button id="imageButton37" value="37" class="pai">
         <img src="images/pai-images/sangen3.png" alt="sangen3">
     </button>
-    
+
     <br>
 
     <h2>手牌  <id class="a">※クリックした牌を削除可能</id></h2>
@@ -261,6 +261,11 @@
             //手牌をソートする昇順に
             const hands = hand.sort((a, b) => a - b);
             var YakuScore = [];
+
+            if(hands.length < 14){
+                alert('牌を14枚選択してください。');
+                return;
+            }
 
             
             if (countTiles(hands) > 13) {

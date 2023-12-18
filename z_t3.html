@@ -262,7 +262,11 @@
             const hands = hand.sort((a, b) => a - b);
             var YakuScore = [];
 
-            
+            if(hands.length < 14){
+                alert('牌を14枚選択してください。');
+                return;
+            }
+
             if (countTiles(hands) > 13) {
                 YakuScore.push('残念。不正解！リセットでやり直せます。')
             }
