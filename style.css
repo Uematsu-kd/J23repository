@@ -116,7 +116,7 @@ header {
     min-width: 960px;
   }
   header .headline{
-    font-size: 32px;
+    font-size: 43px;
   }
   .nav-list {
     text-align: center;
@@ -137,3 +137,23 @@ header {
     color:#cbc8c8;
     text-decoration: none;
   }
+
+   .han img{
+    width: 38px;
+    height: auto;
+   }
+
+   .han{
+    font-size: 20px;
+    color: #fff;
+   }
+
+   .space{
+    margin-bottom: 60px;
+   }
+
+   .yakuname{
+    border-bottom: 2px solid #f6b80e;
+      display: inline-block;
+      width: 50%;
+   }

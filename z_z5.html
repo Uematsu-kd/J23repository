@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>役パズル</title>
+</head>
+
+
+<body>
+    <header>
+        <h1 class="headline">
+          <p>役パズル</p>
+        </h1>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a href="index.html">ホーム</a></li>
+          <li class="nav-list-item"><a href="beginner.html">初心者</a></li>
+          <li class="nav-list-item"><a href="yakuitiran.html">役一覧</a></li>
+        </ul>
+      </header>
+
+    <p><h2>清一色(チンイツ)、タンヤオ、一盃口(イーペーコー)を作ってみよう！</h2></p>
+    <!--牌のボタン-->
+    <!--ここからマンズ-->
+    <button id="imageButton1" value="1" class="pai">
+        <img src="images/pai-images/man1.png" alt="man1">
+    </button>
+
+    <button id="imageButton2" value="2" class="pai">
+        <img src="images/pai-images/man2.png" alt="man2">
+    </button>
+
+    <button id="imageButton3" value="3" class="pai">
+        <img src="images/pai-images/man3.png" alt="man3">
+    </button>
+
+    <button id="imageButton4" value="4" class="pai">
+        <img src="images/pai-images/man4.png" alt="man4">
+    </button>
+
+    <button id="imageButton5" value="5" class="pai">
+        <img src="images/pai-images/man5.png" alt="man5">
+    </button>
+
+    <button id="imageButton6" value="6" class="pai">
+        <img src="images/pai-images/man6.png" alt="man6">
+    </button>
+
+    <button id="imageButton7" value="7" class="pai">
+        <img src="images/pai-images/man7.png" alt="man7">
+    </button>
+
+    <button id="imageButton8" value="8" class="pai">
+        <img src="images/pai-images/man8.png" alt="man8">
+    </button>
+
+    <button id="imageButton9" value="9" class="pai">
+        <img src="images/pai-images/man9.png" alt="man9">
+    </button>
+
+    <br>
+
+    <!--ここからピンズ-->
+    <button id="imageButton11" value="11" class="pai">
+        <img src="images/pai-images/pin1.png" alt="pin1">
+    </button>
+
+    <button id="imageButton12" value="12" class="pai">
+        <img src="images/pai-images/pin2.png" alt="pin2">
+    </button>
+
+    <button id="imageButton13" value="13" class="pai">
+        <img src="images/pai-images/pin3.png" alt="pin3">
+    </button>
+
+    <button id="imageButton14" value="14" class="pai">
+        <img src="images/pai-images/pin4.png" alt="pin4">
+    </button>
+
+    <button id="imageButton15" value="15" class="pai">
+        <img src="images/pai-images/pin5.png" alt="pin5">
+    </button>
+
+    <button id="imageButton16" value="16" class="pai">
+        <img src="images/pai-images/pin6.png" alt="pin6">
+    </button>
+
+    <button id="imageButton17" value="17" class="pai">
+        <img src="images/pai-images/pin7.png" alt="pin7">
+    </button>
+
+    <button id="imageButton18" value="18" class="pai">
+        <img src="images/pai-images/pin8.png" alt="pin8">
+    </button>
+
+    <button id="imageButton19" value="19" class="pai">
+        <img src="images/pai-images/pin9.png" alt="pin9">
+    </button>
+
+    <br>
+
+    <!--ここからソーズ-->
+    <button id="imageButton21" value="21" class="pai">
+        <img src="images/pai-images/sou1.png" alt="sou1">
+    </button>
+
+    <button id="imageButton22" value="22" class="pai">
+        <img src="images/pai-images/sou2.png" alt="sou2">
+    </button>
+
+    <button id="imageButton23" value="23" class="pai">
+        <img src="images/pai-images/sou3.png" alt="sou3">
+    </button>
+
+    <button id="imageButton24" value="24" class="pai">
+        <img src="images/pai-images/sou4.png" alt="sou4">
+    </button>
+
+    <button id="imageButton25" value="25" class="pai">
+        <img src="images/pai-images/sou5.png" alt="sou5">
+    </button>
+
+    <button id="imageButton26" value="26" class="pai">
+        <img src="images/pai-images/sou6.png" alt="sou6">
+    </button>
+
+    <button id="imageButton27" value="27" class="pai">
+        <img src="images/pai-images/sou7.png" alt="sou7">
+    </button>
+
+    <button id="imageButton28" value="28" class="pai">
+        <img src="images/pai-images/sou8.png" alt="sou8">
+    </button>
+
+    <button id="imageButton29" value="29" class="pai">
+        <img src="images/pai-images/sou9.png" alt="sou9">
+    </button>
+
+    <br>
+
+    <!--ここから字牌-->
+    <button id="imageButton31" value="31" class="pai">
+        <img src="images/pai-images/ji1.png" alt="ji1">
+    </button>
+
+    <button id="imageButton32" value="32" class="pai">
+        <img src="images/pai-images/ji2.png" alt="ji2">
+    </button>
+
+    <button id="imageButton33" value="33" class="pai">
+        <img src="images/pai-images/ji3.png" alt="ji3">
+    </button>
+
+    <button id="imageButton34" value="34" class="pai">
+        <img src="images/pai-images/ji4.png" alt="ji4">
+    </button>
+
+    <button id="imageButton35" value="35" class="pai">
+        <img src="images/pai-images/sangen1.png" alt="sangen1">
+    </button>
+
+    <button id="imageButton36" value="36" class="pai">
+        <img src="images/pai-images/sangen2.png" alt="sangen2">
+    </button>
+
+    <button id="imageButton37" value="37" class="pai">
+        <img src="images/pai-images/sangen3.png" alt="sangen3">
+    </button>
+
+    <br>
+
+    <h2>手牌  <id class="a">※クリックした牌を削除可能</id></h2>
+
+
+
+    <div id="imageContainer"></div>
+
+
+
+    <!--   役を判定するボタンを追加     -->
+    <br><span><button id="judgeButton">判定</button></span><br>
+
+    <ul id="list"></ul>
+
+    <script type="text/javascript">
+        // 選択された牌の配列
+        let selectedTiles = [];
+        let hand = [];
+
+        window.onload = function () {
+            // 初期手牌の配列
+            const initialTiles = [1, 1, 1, 11, 11, 11, 11, 21 , 21, 22, 23, 37, 37, 37];
+
+            // 初期手牌を表示するために addTileToHand を 14 回呼び出す
+            for (let i = 0; i < 14; i++) {
+    const button = document.getElementById('imageButton' + initialTiles[i]);
+    if (button) {
+        const imageSrc = button.querySelector('img').src;
+        addTileToHand(imageSrc);
+        addTileNumberToHand(initialTiles[i]);
+    }
+}
+        };
+        
+        // 牌の数をチェックする関数
+        function checkTileCount(imageSrc) {
+            return selectedTiles.filter(src => src === imageSrc).length;
+        }
+
+        // 手牌エリアに牌を追加する関数
+        function addTileToHand(imageSrc) {
+            if (selectedTiles.length < 14 && checkTileCount(imageSrc) < 4) {
+                selectedTiles.push(imageSrc);
+                renderHand();
+            }
+        }
+
+        // 手牌エリアを描画する関数
+        function renderHand() {
+            const handContainer = document.getElementById('imageContainer');
+            handContainer.innerHTML = ''; // 手牌エリアをクリア
+            selectedTiles.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.addEventListener('click', () => removeTileFromHand(index));
+                handContainer.appendChild(img);
+            });
+        }
+        // 手牌から牌を削除する関数
+        function removeTileFromHand(index) {
+            selectedTiles.splice(index, 1);
+            renderHand();
+            hand.splice(index, 1);
+        }
+
+        // 各牌ボタンにイベントリスナーを追加
+        document.querySelectorAll('button[id^="imageButton"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const imageSrc = button.querySelector('img').src;
+                addTileToHand(imageSrc);
+                const buttonValue = parseInt(button.value);
+                addTileNumberToHand(buttonValue);
+            });
+        });
+        function scrollToBottom() {
+            const scrollOffset = 500; // スクロールのオフセットを調整（ピクセル単位）
+    
+            window.scrollTo({
+                top: document.body.scrollHeight - scrollOffset,
+                behavior: 'smooth'
+            });
+        }
+
+
+        // 牌を手牌に追加する関数
+        function addTileNumberToHand(tileNumber) {
+            if (hand.length < 14) {
+                hand.push(tileNumber);
+                renderHand();
+            }
+        }
+
+        //役判定ボタンがクリックされた時の処理
+        document.getElementById('judgeButton').addEventListener('click', () => {
+            console.log(hand);
+            //手牌をソートする昇順に
+            const hands = hand.sort((a, b) => a - b);
+            var YakuScore = [];
+
+            
+            if (countTiles(hands) > 13) {
+                YakuScore.push('残念。不正解！そのままやり直せます。')
+            }
+            if((isIipeikou(hands)) && (isTanyao(hands)) && (isQingYiSe(hands))){
+                YakuScore.push('正解！ヘッダーの初心者で次の問題に挑戦しよう！')
+            }else if((isIipeikou(hands)) || (isTanyao(hands)) || (isQingYiSe(hands))){
+                if((isIipeikou(hands)) && (isTanyao(hands))){
+                    YakuScore.push('惜しい！一盃口とタンヤオはできています！そのままやり直せます。')
+                }else if((isIipeikou(hands)) && (isQingYiSe(hands))){
+                    YakuScore.push('惜しい！一盃口とチンイツはできています！そのままやり直せます。')
+                }else if((isTanyao(hands)) && (isQingYiSe(hands))){
+                    YakuScore.push('惜しい！タンヤオとチンイツはできています！そのままやり直せます。')
+                }else if(isTanyao(hands)){
+                    YakuScore.push('惜しい！タンヤオのみできています！そのままやり直せます。')
+                }else if(isIipeikou(hands)){
+                    YakuScore.push('惜しい！一盃口のみできています！そのままやり直せます。')
+                }else if(isQingYiSe(hands)){
+                    YakuScore.push('惜しい！清一色のみできています！そのままやり直せます。')
+                }
+            }else{
+                YakuScore.push('残念。不正解！そのままやり直せます。')
+            }
+            
+            for (var i = 0; i < YakuScore.length; i++) { 
+                var Yakuview = document.createElement('li'); 
+                Yakuview.textContent = YakuScore[i];
+                document.getElementById('list').appendChild(Yakuview); 
+            }
+            console.log("YakuScore:", YakuScore); 
+            // 既存の役要素を削除してから新しい役を表示
+            document.getElementById('list').innerHTML = '';
+
+            var YakuList = document.getElementById('list');
+            for (var i = 0; i < YakuScore.length; i++) {
+                var Yakuview = document.createElement('li');
+                Yakuview.textContent = YakuScore[i];
+                YakuList.appendChild(Yakuview);
+            }
+            scrollToBottom()
+        });
+
+        //-----------------国士無双を判定する関数-----------------------
+        function isKokusi(hands) {
+            // 国士無双の13種の牌
+            const kokushiTiles = [1, 9, 11, 19, 21, 29, 31, 32, 33, 34, 35, 36, 37];
+
+            // 手牌を数えるためのオブジェクト
+            const tileCount = {};
+
+            // 手牌を数える
+            hand.forEach(tile => {
+                tileCount[tile] = (tileCount[tile] || 0) + 1;
+            });
+
+            // 国士無双の条件を満たすかどうかを判定
+            let Kokushi = true;
+            kokushiTiles.forEach(tile => {
+                if (!tileCount[tile]) {
+                    Kokushi = false;
+                }
+            });
+
+            return Kokushi;
+        }
+
+        //------------------大三元を判定する関数--------------------------
+        function isDaisharin(hands) {
+            // 大三元を構成する牌の種類
+            const daisharinTiles = [35, 36, 37];
+
+            // 手牌に大三元の牌が3枚以上含まれているか判定
+            for (const tile of daisharinTiles) {
+                const count = hands.filter(t => t === tile).length;
+                if (count < 3) {
+                    return false;
+                }
+            }
+
+            // 手牌を数えるためのオブジェクト
+            let tileCount = countTiles(hands);
+
+            if (tileCount > 7) {
+                return false;
+            }
+
+            // 大三元が揃っている場合はtrueを返す
+            return true;
+        }
+
+
+        //------------------一盃口を判定する関数--------------------------
+        function isIipeikou(hands) {
+            const iipeikoutile = [
+                [1, 1, 2, 2, 3, 3],[2, 2, 3, 3, 4, 4],[3, 3, 4, 4, 5, 5],
+                [4, 4, 5, 5, 6, 6],[5, 5, 6, 6, 7, 7],[6, 6, 7, 7, 8, 8],
+                [7, 7, 8, 8, 9, 9],[11, 11, 12, 12, 13, 13],[12, 12, 13, 13, 14, 14],
+                [13, 13, 14, 14, 15, 15],[14, 14, 15, 15, 16, 16],[15, 15, 16, 16, 17, 17],
+                [16, 16, 17, 17, 18, 18],[17, 17, 18, 18, 19, 19],[21, 21, 22, 22, 23, 23],
+                [22, 22, 23, 23, 24, 24],[23, 23, 24, 24, 25, 25],[24, 24, 25, 25, 26, 26],
+                [25, 25, 26, 26, 27, 27],[26, 26, 27, 27, 28, 28],[27, 27, 28, 28, 29, 29],
+            ];
+
+            // 各一盃口のパターンに対して、手牌が一致するかを確認
+            for (const pattern of iipeikoutile) {
+                const patternCopy = [...pattern]; // パターンのコピーを作成
+                let matchCount = 0;
+
+                // パターンと手牌が一致するかを確認
+                for (const tile of hands) {
+                    const index = patternCopy.indexOf(tile);
+                    if (index !== -1) {
+                        patternCopy.splice(index, 1);
+                        matchCount++;
+                    }
+                }
+
+                // 各数字が2回ずつ出現しているかどうかを確認
+                if (matchCount === 6) {
+                    return true;
+                }
+            }
+
+            // どのパターンにも一致しない場合は false を返す
+            return false;
+
+        }
+
+
+        //------------------対々和を判定する関数--------------------------
+        function isToitoi(hands) {
+            // 手牌を数えるためのオブジェクト
+            let tileCount = countTiles(hands);
+
+            // 同じ牌が5つ以下であれば対々和と判定
+            if (tileCount <= 5) {
+                return true;
+            }
+
+            // 対々和でない場合はfalseを返す
+            return false;
+        }
+
+        //------------------タンヤオを判定する関数--------------------------
+        function isTanyao(hands) {
+            // 手牌に含まれる数牌と字牌の範囲
+            const invalidTiles = [1, 9, 11, 19, 21, 29, 31, 32, 33, 34, 35, 36, 37];
+
+            // 手牌に含まれる無効な牌の数を数える
+            const invalidTileCount = hands.filter(tile => invalidTiles.includes(tile)).length;
+
+            // 手牌に1や9を含まず、字牌も含まない場合、タンヤオと判定
+            if (invalidTileCount === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        //------------------役牌(三元牌)/白發中を判定する関数--------------------------
+        function isYaku(hands) {
+            // 手牌に含まれる数牌と字牌の範囲
+            const invalidTiles = [35, 36, 37];
+
+            for (const invalidTile of invalidTiles) {
+                const triplet = hand.filter(tile => tile === invalidTile);
+                if (triplet.length >= 3) {
+                    return true;  // 白發中の刻子が1組でもあれば true を返す
+                }
+            }
+
+            return false;  // 白發中の刻子が1組もない場合
+
+        }
+
+        //------------------手牌の牌の種類の数を調べる関数--------------------------
+        function countTiles(hands) {
+            const uniqueTiles = new Set(hands);// Setオブジェクトを使用して一意の要素を取得
+            return uniqueTiles.size;// Setのサイズ（要素の数）を返す
+        }
+
+
+        //------------------一気通貫を判定する関数--------------------------
+        function isIkkitukan(hands) {
+
+            const validSequences = [
+                [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                [11, 12, 13, 14, 15, 16, 17, 18, 19],
+                [21, 22, 23, 24, 25, 26, 27, 28, 29]
+            ];
+
+            // 手牌が一気通貫の条件を満たすか判定
+            function hasIkkitsuukanSequence() {
+                return validSequences.some(sequence => sequence.every(x => hands.includes(x)));
+            }
+            // 数牌が一気通貫の条件を満たすか判定
+            return hasIkkitsuukanSequence();
+        }
+
+        //------------------三色同刻を判定する関数--------------------------
+        function isSansyokudo(hands) {
+            const sanshokudotile = [
+                [1, 1, 1, 11, 11, 11, 21, 21, 21],
+                [2, 2, 2, 12, 12, 12, 22, 22, 22],
+                [3, 3, 3, 13, 13, 13, 23, 23, 23],
+                [4, 4, 4, 14, 14, 14, 24, 24, 24],
+                [5, 5, 5, 15, 15, 15, 25, 25, 25],
+                [6, 6, 6, 16, 16, 16, 26, 26, 26],
+                [7, 7, 7, 17, 17, 17, 27, 27, 27],
+                [8, 8, 8, 18, 18, 18, 28, 28, 28],
+                [9, 9, 9, 19, 19, 19, 29, 29, 29]
+            ];
+
+            return sanshokudotile.some(pattern => {
+                const foundTiles = hands.filter(tile => pattern.includes(tile));
+                return foundTiles.length >= 9; // 9枚以上が一致していればtrue
+            });
+        }
+
+        //------------------三色同順を判定する関数--------------------------
+        function isSansyokujun(hands) {
+            const sanshokujuntile = [
+                [1, 2, 3, 11, 12, 13, 21, 22, 23],
+                [2, 3, 4, 12, 13, 14, 22, 23, 24],
+                [3, 4, 5, 13, 14, 15, 23, 24, 25],
+                [4, 5, 6, 14, 15, 16, 24, 25, 26],
+                [5, 6, 7, 15, 16, 17, 25, 26, 27],
+                [6, 7, 8, 16, 17, 18, 26, 27, 28],
+                [7, 8, 9, 17, 18, 19, 27, 28, 29]
+            ];
+
+            // 各三色同順のパターンに対して、手牌が一致するかを確認
+            return sanshokujuntile.some(pattern => {
+                const uniquePattern = [...new Set(pattern)]; // 重複を削除
+                const uniqueHands = [...new Set(hands)]; // 重複を削除
+
+                return uniquePattern.every(value => uniqueHands.includes(value));
+            });
+
+        }
+
+        //------------------清一色を判定する関数--------------------------
+        function isQingYiSe(hands) {
+            const wanRange = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const tongRange = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+            const suoRange = [21, 22, 23, 24, 25, 26, 27, 28, 29];
+
+            function isSameSuit(suitRange, suitTiles) {
+                return suitTiles.every(tile => suitRange.includes(tile));
+            }
+
+            const containsWan = isSameSuit(wanRange, hands);
+            const containsTong = isSameSuit(tongRange, hands);
+            const containsSuo = isSameSuit(suoRange, hands);
+
+            // 三つのスートのいずれか一つでも揃っていれば清一色
+            return containsWan || containsTong || containsSuo;
+        }
+
+        //------------------混一色を判定する関数-------------------------
+        function isHonitsu(hands) {
+            const jiRange = [31, 32, 33, 34, 35, 36, 37];
+
+            // 字牌が含まれているかを判定
+            const containsJi = hands.some(tile => jiRange.includes(tile));
+
+            // 字牌が含まれていない場合は false を返す
+            if (!containsJi) {
+                return false;
+            }
+
+            // 字牌を削除
+            const handsWithoutJi = hands.filter(tile => !jiRange.includes(tile));
+
+            // 削除した後の手牌がすべて同じスートかどうかを判定
+            const isSameSuit = handsWithoutJi.every(tile => tile >= 1 && tile <= 9) ||
+                               handsWithoutJi.every(tile => tile >= 11 && tile <= 19) ||
+                               handsWithoutJi.every(tile => tile >= 21 && tile <= 29);
+
+            return isSameSuit;
+        }
+
+        //------------------平和を判定する関数-------------------------
+        function isPinfu(hands) {
+            const uniqueSortedTiles = [...new Set(hands)].sort();
+
+            let countShuntsu = 0;
+            let countKotsu = 0;
+
+            for (let i = 0; i < uniqueSortedTiles.length - 2; i++) {
+                const current = uniqueSortedTiles[i];
+                const next1 = current + 1;
+                const next2 = current + 2;
+
+                if (uniqueSortedTiles.includes(next1) && uniqueSortedTiles.includes(next2)) {
+                    countShuntsu++;
+                }
+            }
+
+            for (let i = 0; i < uniqueSortedTiles.length - 2; i++) {
+                const current = uniqueSortedTiles[i];
+                const next1 = current + 1;
+                const next2 = current + 2;
+
+                if (uniqueSortedTiles.includes(next1) && uniqueSortedTiles.includes(next2)) {
+                    countShuntsu++;
+                }
+            }
+
+            // 手牌に35, 36, 37(三元牌)がある場合はfalse
+            if (hands.includes(35) || hands.includes(36) || hands.includes(37)) {
+                return false;
+            }
+    
+            return countShuntsu >= 4 && countKotsu === 0;
+        }
+
+
+
+        //------------------七対子--------------------------
+        function isChiitoitsu(hands) {
+            // 手牌が七つの対子で構成されているかどうかを確認
+            if (hands.length !== 14) {
+                return false; // 手牌が14枚ではない場合、直接falseを返す
+            }
+
+            const tileCounts = {};
+            for (const tile of hands) {
+                tileCounts[tile] = (tileCounts[tile] || 0) + 1;
+            }
+
+            return Object.values(tileCounts).every(count => count === 2);
+        }
+
+
+    </script>
+</body>
+
+</html>
