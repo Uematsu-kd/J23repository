@@ -114,6 +114,9 @@ header {
     margin: 0 auto;
     text-align: center;
     min-width: 960px;
+    border-bottom: 2px solid #ffffff;
+    display: inline-block;
+    width: 90%;
   }
   header .headline{
     font-size: 43px;
