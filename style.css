@@ -1,22 +1,23 @@
-*{
+* {
     max-width: 100%;
     height: auto;
     list-style: none;
 }
+
 h1 {
-    font-size:3em;
-	text-align:center;
-	line-height:0.95em;
-	font-weight:bold;
-	color: #ffffff;
-	text-shadow:
-		0 0.01em 0 #999,
-		0 0.02em 0 #888,
-		0 0.03em 0 #777,
-		0 0.04em 0 #666,
-		0 0.05em 0 #555,
-		0 0.06em 0 #444,
-		0 0.08em 0 #000;
+    font-size: 3em;
+    text-align: center;
+    line-height: 0.95em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow:
+        0 0.01em 0 #999,
+        0 0.02em 0 #888,
+        0 0.03em 0 #777,
+        0 0.04em 0 #666,
+        0 0.05em 0 #555,
+        0 0.06em 0 #444,
+        0 0.08em 0 #000;
 }
 
 body {
@@ -36,6 +37,7 @@ p {
     white-space: nowrap;
     text-align: center;
 }
+
 #hintButton,
 #resetButton,
 #judgeButton {
@@ -47,11 +49,11 @@ p {
 
     border: solid 2px #454545;
     text-align: center;
-    
+
 }
 
 #resetButton:hover,
-#judgeButton:hover{
+#judgeButton:hover {
     color: #a2a1a1;
 }
 
@@ -60,24 +62,24 @@ div {
     text-align: center;
 }
 
-#list{
+#list {
     font-size: 18pt;
     color: rgb(51, 50, 50);
-    list-style:none;
+    list-style: none;
     overflow: hidden;
 }
 
-.pai{
-    background-color:#f6b80e;
+.pai {
+    background-color: #f6b80e;
     width: auto;
 }
 
-.pai:hover{
+.pai:hover {
     background-color: #f5d681;
     color: #777;
 }
 
-.a{
+.a {
     font-size: 12pt;
 }
 
@@ -86,6 +88,7 @@ div {
     from {
         transform: translateX(100%);
     }
+
     to {
         transform: translateX(0);
     }
@@ -117,47 +120,54 @@ header {
     border-bottom: 2px solid #ffffff;
     display: inline-block;
     width: 90%;
-  }
-  header .headline{
+}
+
+header .headline {
     font-size: 43px;
-  }
-  .nav-list {
+}
+
+.nav-list {
     text-align: center;
     font-size: 23px;
     padding: 10px 0;
     margin: 0 auto;
-  }
-  .nav-list-item {
-    color:#ffff;
+}
+
+.nav-list-item {
+    color: #ffff;
     list-style: none;
     display: inline-block;
     margin: 0 20px;
-  }
-  a:link, a:visited, a:active {
+}
+
+a:link,
+a:visited,
+a:active {
     color: white;
     text-decoration: none;
-  }
-  a:hover{
-    color:#cbc8c8;
-    text-decoration: none;
-  }
+}
 
-   .han img{
+a:hover {
+    color: #cbc8c8;
+    text-decoration: none;
+}
+
+.han img {
     width: 38px;
     height: auto;
-   }
+}
 
-   .han{
-    font-size: 20px;
+.han {
+    font-size: 22px;
     color: #fff;
-   }
+}
 
-   .space{
+.space {
     margin-bottom: 60px;
-   }
+}
 
-   .yakuname{
+.yakuname {
     border-bottom: 2px solid #f6b80e;
-      display: inline-block;
-      width: 50%;
-   }
+    display: inline-block;
+    width: 50%;
+}
