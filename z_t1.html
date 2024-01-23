@@ -204,7 +204,10 @@
         function checkTileCount(imageSrc) {
             return selectedTiles.filter(src => src === imageSrc).length;
         }
-
+        // 牌の数をチェックする関数(hand用)
+        function chenktilecount(tileNumber) {
+            return hand.filter(src => src === tileNumber).length;
+        }
         // 手牌エリアに牌を追加する関数
         function addTileToHand(imageSrc) {
             if (selectedTiles.length < 14 && checkTileCount(imageSrc) < 4) {
@@ -252,7 +255,7 @@
 
         // 牌を手牌に追加する関数
         function addTileNumberToHand(tileNumber) {
-            if (hand.length < 14) {
+            if (hand.length < 14 && chenktilecount(tileNumber) < 4) {
                 hand.push(tileNumber);
                 renderHand();
             }
