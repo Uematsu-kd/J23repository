@@ -194,6 +194,7 @@ a:hover {
 .han {
     font-size: 22px;
     color: #fff;
+    padding-inline-start: 0;
 }
 
 .space {
